@@ -1,0 +1,9 @@
+﻿metric,baseline,s2,delta
+test_psnr,13.441,14.549,1.108
+test_ssim,0.128,0.164,0.036
+test_lpips,0.462,0.448,-0.014
+train_psnr,17.942,17.511,-0.431
+train_ssim,0.542,0.439,-0.103
+train_lpips,0.345,0.386,0.041
+miou,,0.501,
+rail_track_iou,0.057,0.417,0.36

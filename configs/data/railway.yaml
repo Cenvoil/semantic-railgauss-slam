@@ -1,0 +1,10 @@
+dataset_name: 'railway'
+camera_params:
+  image_height: 2504
+  image_width: 4112
+  fx: 7267.95450880415
+  fy: 7267.95450880415
+  cx: 2056.049238502414
+  cy: 1232.862908875167
+  png_depth_scale: 1000.0
+  crop_edge: 0

@@ -1,0 +1,44 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ---- 训练 / 实验产物（绝不入库；目录模式锚定仓库根，勿匹配 configs/data 等同名子目录） ----
+/data/
+/experiments/
+/out/
+/wandb/
+/runs/
+/output_*/
+/checkpoints/
+/*.npz
+/*.npy
+/*.pth
+/*.pt
+/*.ply
+/*.ckpt
+
+# ---- 数据集与压缩包 ----
+/*.zip
+/*.tar
+/*.tar.gz
+/*.tgz
+/unpacked*/
+
+# ---- 日志与临时 ----
+/*.log
+/logs/
+/tmp/
+/nohup.out
+
+# ---- 系统与编辑器 ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ---- 大图产物（渲染/目检输出） ----
+/render-out*/

@@ -1,0 +1,4 @@
+method,type,frames,ate_rmse_m,ate_over_reference,final_error_m,note
+KISS-ICP,LiDAR-only,3044,284.724,0.2260,606.087,along-track degeneration
+GenZ-ICP,LiDAR-only,3044,55.733,0.0442,110.604,complete
+Ours,LiDAR-IMU + straight-track prior,3044,17.090,0.0136,37.657,complete
