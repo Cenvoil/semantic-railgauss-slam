@@ -1,0 +1,39 @@
+# FAST-LIO2 on the self-collected sequence (3D LiDAR clouds from lidar_all).
+common:
+    lid_topic:  "/livox/lidar"
+    imu_topic:  "/livox/imu"
+    time_sync_en: false
+
+preprocess:
+    lidar_type: 3
+    scan_line: 32
+    blind: 1
+    timestamp_unit: 3
+
+mapping:
+    acc_cov: 0.1
+    gyr_cov: 0.1
+    b_acc_cov: 0.0001
+    b_gyr_cov: 0.0001
+    fov_degree: 180
+    det_range: 500.0
+    extrinsic_T: [ 0.0, 0.0, 0.0 ]
+    extrinsic_R: [ 1, 0, 0,
+                   0, 0, 1,
+                   0, -1, 0]
+    filter_size_surf: 0.5
+    filter_size_map: 0.5
+    filter_size_surf_min: 0.5
+    filter_size_map_min: 0.5
+    cube_side_length: 500
+    point_filter_num: 2
+    max_iteration: 4
+    esti_plane_threshold: 0.1
+
+publish:
+    path_en: true
+    scan_publish_en: false
+    dense_publish_en: false
+
+pcd_save:
+    pcd_save_en: false

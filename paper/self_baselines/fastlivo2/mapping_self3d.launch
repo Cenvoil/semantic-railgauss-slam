@@ -1,0 +1,7 @@
+<launch>
+    <arg name="rviz" default="false" />
+    <rosparam command="load" file="$(find fast_livo_gs)/config/self_rail3d.yaml" />
+    <node pkg="fast_livo_gs" type="fastlivo_mapping" name="laserMapping" output="screen">
+        <rosparam file="$(find fast_livo_gs)/config/camera_self.yaml" />
+    </node>
+</launch>

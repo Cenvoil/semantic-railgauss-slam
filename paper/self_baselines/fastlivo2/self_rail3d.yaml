@@ -1,0 +1,47 @@
+# FAST-LIVO2 (LIVO-GS fork) on the self-collected sequence, 3D LiDAR clouds
+# from lidar_all (frame: x forward, y lateral, z up; 15 Hz, no per-point time).
+feature_extract_enable : 0
+point_filter_num : 2
+max_iteration : 5
+dense_map_enable : 1
+filter_size_surf : 0.15
+filter_size_map : 0.3
+cube_side_length : 500
+grid_size : 40
+patch_size : 8
+img_enable : 0
+lidar_enable : 1
+outlier_threshold : 300
+ncc_en: false
+ncc_thre : 0
+img_point_cov : 100
+laser_point_cov : 0.001
+pose_output_en: false
+delta_time: 0.0
+
+common:
+    lid_topic:  "/livox/lidar"
+    imu_topic:  "/livox/imu"
+
+preprocess:
+    lidar_type: 3
+    scan_line: 32
+    blind: 1
+
+mapping:
+    acc_cov_scale: 100
+    gyr_cov_scale: 10000
+    extrinsic_T: [ 0.0, 0.0, 0.0 ]
+    extrinsic_R: [ 1, 0, 0,
+                   0, 0, 1,
+                   0, -1, 0]
+
+pcd_save:
+    pcd_save_en: false
+
+camera:
+    img_topic: /camera/image_color
+    Rcl: [0.0, -1.0, 0.0,
+          -0.13117, 0.0, -0.991361,
+          0.991361, 0.0, -0.13117]
+    Pcl: [-0.7402, -1.6444, -0.2176]

@@ -1,4 +1,15 @@
-method,type,frames,ate_rmse_m,ate_over_reference,final_error_m,note
-KISS-ICP,LiDAR-only,3044,284.724,0.2260,606.087,along-track degeneration
-GenZ-ICP,LiDAR-only,3044,55.733,0.0442,110.604,complete
-Ours,LiDAR-IMU + straight-track prior,3044,17.090,0.0136,37.657,complete
+method,modality,segment,ate_rmse_m,ate_over_reference,final_error_m
+FAST-LIVO2,LiDAR-IMU (reference),0-3043,0.000,0.0000,0.000
+KISS-ICP,LiDAR-only,0-3043,229.410,0.2073,498.039
+GenZ-ICP,LiDAR-only,0-3043,2.740,0.0025,2.829
+FAST-LIO2,LiDAR-IMU,0-3043,1.073,0.0010,2.100
+Ours,LiDAR-IMU + 3DGS,0-3043,44.694,0.0404,77.231
+MonoGS,monocular RGB (per-segment Sim3),0-3043 (10 segments),34.383,0.0311,
+GigaSLAM,monocular RGB (stitched segments),0-3043,43.510,0.0394,87.132
+SGS-Official,RGB-D (pseudo depth),600-699,0.717,0.0424,0.787
+SGS-Official,RGB-D (pseudo depth),1200-1299,2.239,0.1695,2.403
+SGS-Official,RGB-D (pseudo depth),2400-2499,30.467,0.2563,47.837
+Ours (100-frame chunks),LiDAR-IMU + 3DGS,600-699,1.080,0.0639,1.760
+Ours (100-frame chunks),LiDAR-IMU + 3DGS,1200-1299,0.470,0.0356,0.740
+Ours (100-frame chunks),LiDAR-IMU + 3DGS,2400-2499,3.160,0.0266,5.870
+ORB-SLAM3,monocular RGB (Sim3),0-3043,3.513,0.0032,8.380

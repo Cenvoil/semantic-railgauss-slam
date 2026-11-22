@@ -103,6 +103,28 @@ data/<sequence>/
   `tools/benchmarks/error_profile` 流程与 [`docs/baseline_freeze.md`](docs/baseline_freeze.md)。
 - 复跑须知：PSNR 噪声底 0.11 dB ⇒ 结论须 ≥3 跑中位；评测前 `tools/eval/regression_test_ate.py` 必须 PASS。
 
+## 4.1 自采序列基线（Table 13）
+
+自采保定—天津序列（3,044 帧，约 1.11 km）没有 INS 真值，ATE 一律相对 FAST-LIVO2 参考轨迹
+（2,033 个位姿，1,107 m）。完整协议、分段方式与可复跑脚本见
+[`paper/self_baselines/README.md`](paper/self_baselines/README.md)，数值见
+[`paper/results/self_baselines.csv`](paper/results/self_baselines.csv)。
+
+| 方法 | 模态 | 评测段 | ATE RMSE (m) | 终点误差 (m) |
+|:-----|:-----|:-------|--------:|--------:|
+| KISS-ICP | LiDAR-only | 0–3043 | 229.4 | 498.0 |
+| GenZ-ICP | LiDAR-only | 0–3043 | 2.7 | 2.8 |
+| FAST-LIO2 | LiDAR-IMU | 0–3043 | 1.1 | 2.1 |
+| 本方法 | LiDAR-IMU + 3DGS | 0–3043 | 44.7 | 77.2 |
+| MonoGS | 单目 RGB，逐段 Sim(3) | 0–3043 | 34.4 | — |
+| ORB-SLAM3 | 单目 RGB，Sim(3) | 0–3043 | 3.5 | 8.4 |
+| GigaSLAM | 单目 RGB，链式拼接 | 0–3043 | 43.5 | 87.1 |
+| SGS 官方版 | RGB-D，伪深度 | 3×100 帧 | 0.7 / 2.2 / 30.5 | — |
+| 本方法（同 100 帧片段） | LiDAR-IMU + 3DGS | 3×100 帧 | 1.1 / 0.5 / 3.2 | — |
+
+MonoGS 为 10 段 350 帧分段运行、逐段 Sim(3) 对齐；GigaSLAM 为 10 段链式拼接；
+SGS 官方版只能完成 100 帧片段（600–699 / 1200–1299 / 2400–2499）；ORB-SLAM3 为单目全程（992 关键帧）。
+
 ## 5. 仓库结构
 
 ```
@@ -118,6 +140,7 @@ railgauss-osdar23/
 │   ├── eval/                 # eval_ate.py（指标唯一出口）+ regression_test_ate.py（每次必跑）
 │   ├── data_prep/            # OSDaR23 官方数据 → 训练集 全流程（下载/投影/深度/语义 L1~L4）
 │   └── benchmarks/           # KISS-ICP 对照、真值导出、LiDAR 投影标定、帧对比图
+├── paper/                    # 论文补充：S2 语义头、自采基线脚本（self_baselines/）、结果 CSV 与轨迹
 └── docs/                     # 冻结口径文档（方法定义/ATE/投影/语义掩码/远场/基线/数据构建）
 ```
 
