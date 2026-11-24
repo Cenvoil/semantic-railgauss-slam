@@ -2,7 +2,7 @@
 >
 > **Numbers.** The paper-aligned numbers are in `paper/results/`; the L7 table below is an earlier development configuration and must not be compared directly with the paper. See `PAPER.md`.
 >
-> Paper main results (v11, Horn SE(3), w2c-t, mean): **1.2 = 1.84 cm; 3.1 = 5.45 cm; 5.1 = 2.94 cm**; no-INS: **1.2 = 4.27 cm, 5.1 = 2280.88 cm**. The 2×2 factorial gives 23.45 / 3.41 / 2.57 / 2.22 cm.
+> Paper main results (v11, Horn SE(3), camera-center, mean): **1.2 = 1.84 cm; 3.1 = 5.45 cm; 5.1 = 2.94 cm**; no-INS: **1.2 = 4.27 cm, 5.1 = 2280.88 cm**. The 2×2 factorial gives 23.45 / 3.41 / 2.57 / 2.22 cm.
 
 # RailGauss-OSDaR23 — 铁路场景语义高斯 SLAM（OSDaR23 数据集专用）
 
@@ -83,7 +83,7 @@ data/<sequence>/
 ## 4. 结果摘要（口径必读）
 
 > **口径规则**（详见 [`docs/method_definition.md`](docs/method_definition.md) §4）：
-> ① ATE 一律 w2c 平移 `t` 口径 + SE(3) 对齐 + 均值（引用必带口径标签）；
+> ① ATE 一律相机中心口径 + SE(3) 对齐 + 均值（引用必带口径标签；w2c-t 仅用于逐帧误差剖面）；
 > ② 数字只来自实际执行，跨口径比较须同集合+同协议；
 > ③ OSDaR23 与 KITTI（城市道路，长 176×）数字**不可直接相减**；
 > ④ 本方法 = 九项全开（1.2/5.1 含真实 INS 先验，A7 合法）。

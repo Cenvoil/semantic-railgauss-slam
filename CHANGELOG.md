@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-24 — v1.1 (paper rebuild)
+
+- Added `paper/results/same_resolution_3.1.csv`: same-resolution 0.5× control on 3.1
+  (ours 19.35 dB / 1.67 cm; SGS official 15.43 dB / 1563.64 cm).
+- ATE labels for the paper's main results changed from w2c-t to **camera-center**
+  (FAST-LIO2 on 5.1 is 9.85 cm in this convention). The L7 development table in
+  `README.md` is retained as-is; see `PAPER.md` for the paper-aligned numbers.
+- Added `paper/results/self_psnr_baselines.csv`.
+- No change to the method code or configurations.
+
 ## 2026-11-22 — self-collected baseline update (main)
 
 - Added `paper/self_baselines/` with the self-collected sequence baseline

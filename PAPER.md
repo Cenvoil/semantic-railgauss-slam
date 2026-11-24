@@ -3,7 +3,7 @@
 The canonical numbers for the paper are in `paper/results/`:
 
 - `three_sequence.csv` — main v11 results: 1.2 = 1.84 cm, 3.1 = 5.45 cm, 5.1 = 2.94 cm
-  (Horn SE(3), w2c-t, mean, INS initialization); PSNR / MS-SSIM / LPIPS / mIoU as reported.
+  (Horn SE(3), camera-center, mean, INS initialization); PSNR / MS-SSIM / LPIPS / mIoU as reported.
 - `ablation_2x2.csv` — 2×2 factorial: 23.45 / 3.41 / 2.57 / 2.22 cm, plus the pure-INS oracle.
 - `self_collected_3d.csv` — self-collected sequence, 3D-only PSNR 27.21 dB.
 - `self_baselines.csv` — self-collected sequence ATE against the FAST-LIVO2

@@ -1,0 +1,5 @@
+method,resolution,psnr_db,ms_ssim,lpips,miou,ate_cm,depth_rmse_cm,note
+Ours,0.5x,19.35,0.737,0.431,0.3427,1.67,,same-resolution control 3.1
+SGS official,0.5x,15.43,0.536,0.476,0.2376,1563.64,156.62,same-resolution control 3.1
+Ours,0.75x,18.86,0.702,0.461,0.3559,5.45,105.34,main table reference
+SGS official,0.375x,17.22,,,,529.97,,memory-limited reference

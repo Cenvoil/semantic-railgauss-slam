@@ -1,0 +1,6 @@
+method,modality,segment,eval_frames,psnr,ssim,lpips
+MonoGS,monocular RGB,0-299,60,31.93,0.899,0.257
+Ours,LiDAR-IMU + 3DGS,0-299,62,27.83,,
+MonoGS,monocular RGB,600-899,60,28.71,0.852,0.459
+Ours,LiDAR-IMU + 3DGS,600-899,61,28.03,,
+GigaSLAM,monocular RGB,0-299 (3 keyframes),3,34.18,0.997,0.225

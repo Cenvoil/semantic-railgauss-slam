@@ -7,5 +7,7 @@ authors:
   - family-names: Tao
     given-names: Dan
 year: 2026
+version: 1.1.0
+date-released: 2026-11-24
 repository-code: "https://github.com/Cenvoil/semantic-railgauss-slam"
 license: BSD-3-Clause
